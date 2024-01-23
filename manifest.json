@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Dark Pattern Detector",
+    "version": "1.0",
+    "description": "Detects potential dark patterns on e-commerce websites",
+    "permissions": ["activeTab", "scripting"],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+        "matches": ["*://*.amazon.com/*",
+            "*://*.ebay.com/*",
+            "*://*.walmart.com/*",
+            "*://*.alibaba.com/*",
+            "*://*.etsy.com/*"
+        ],
+        "js": ["content.js"]
+    }],
+    "host_permissions": [
+        "*://*.amazon.com/*",
+        "*://*.ebay.com/*",
+        "*://*.walmart.com/*",
+        "*://*.alibaba.com/*",
+        "*://*.etsy.com/*"
+    ]
+}
